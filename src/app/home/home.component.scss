@@ -1,0 +1,465 @@
+/* FORMATAÇÃO BOTÃO */
+.btn{
+    display: inline-block;
+    padding: 4px 12px;
+    position: relative;
+    min-width: 100px;
+    max-width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    touch-action: manipulation;
+    color: #000;
+    height: 32px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent;
+    background-color: rgba(0,0,0,.2);
+    transition: all 0.5s;
+    border-radius: 0 0;
+
+    //BOTÃO VOLTAR
+    &.btn-back{
+        background:#e6e6e6;
+        background-color: #e6e6e6;
+        &:hover,&:active,&:focus{
+            background-color:#cacaca;
+            border-color:#cacaca;
+            background: #cacaca;
+        }
+    }
+
+    //BOTÃO AVANÇAR
+    &.btn-next{
+        background: #23489c;
+        background-color: #23489c;
+        border-color: #23489c;
+        &:hover,&:active,&:focus{
+            background-color:#3164d8;
+            border-color:#3164d8;
+            background: #3164d8;
+        }
+    }
+}
+
+/* LOGO */
+.logo{
+    display: table;
+    margin:0 auto;
+    h1{
+        font-size: 30px;
+        font-family: Raleway;
+        color: #23489c;
+        display: table-cell;
+        vertical-align: middle;
+        padding-right: 15px;
+        text-transform: uppercase;
+    }   
+    
+    .circle{
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+
+        .spiral{
+            -webkit-animation: rotating 15s linear infinite;
+            -moz-animation: rotating 15s linear infinite;
+            -ms-animation: rotating 15s linear infinite;
+            -o-animation: rotating 15s linear infinite;
+            animation: rotating 15s linear infinite;
+            background-image: url(/assets/img/circulo-pro.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 100px;
+            height: 100px;
+        }
+        .pro{
+            background-color: #00579a;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            top: 35%;
+            left: 0;
+            right: 0;
+
+            span{
+                color: #fff;
+                text-transform: capitalize;
+                display: table;
+                margin: 5px auto;
+                font-size: 10px;
+                font-weight: bold;
+                font-family: Raleway;
+            }
+        }
+    }
+}
+
+/* ROTAÇÃO DA ESPIRAL DO COSMOS PRO */
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+
+/* FORMATAÇÃO DA POSIÇÃO DO FORMULARIO */ 
+.form-content{
+    form{
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index:10;
+
+        .middle{
+            display: table-cell;
+            vertical-align: middle;
+
+            .box{
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                max-width: 440px;
+                width: calc(100% - 40px);
+                padding: 44px;
+                margin-bottom: 28px;
+                background-color: #fff;
+                -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.55);
+                -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.55);
+                box-shadow: 0 2px 3px rgba(0,0,0,0.55);
+                border: 1px solid #818c94;
+                border: 1px solid rgba(0,0,0,0.4);
+                min-width: 320px;
+                min-height: 448px;
+
+                .content{
+                    margin: 15px 0;
+                    .form{
+
+                        //TITULO DO FORMULÁRIO
+                        .title{
+                            color: #404040;
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            padding: 0;
+                            margin-top: 20px;
+                            margin-bottom: 12px;
+
+                            h2{
+                                font-size: inherit;
+                                margin: 0;
+                                line-height: inherit;
+                            }
+                        }
+
+                        //ALERTAS
+                        .alert{
+                            display: none;
+                            ul{
+                                display: table;
+                                width: 100%;
+
+                                li{
+                                    display: table;
+                                    float: left;
+                                    text-align: left;
+                                    margin-bottom: 10px;
+
+                                    a{
+                                        color: #0067b8;
+                                        &:hover{
+                                            color: #0067b8;
+                                        }
+                                    }
+                                }
+
+                                &.list-alert{
+                                    .alert-error{
+                                        color: #e81123;
+                                    }
+                                }
+                            }
+                        }
+
+                        //AGRUPAMENTO DOS INPUTS
+                        .group{
+                            &>div{
+                                margin-bottom: 30px;
+                                width: 100%;
+                                position: relative;
+                            }
+                            
+                            input{
+                                display: block;
+                                width: 100%;
+                                background-image: none;
+                                border: none;
+                                padding-left: 0;
+                                border-bottom: 1px solid #666;
+                                color:#262626;
+
+                                //FORMATAÇÃO PARA ERRO
+                                &.has-error{
+                                    border-bottom: 1px solid #e81123; 
+                                }
+
+                                &:focus,&:active{
+                                    border-color: #0067b8;
+                                    background:#fff;
+                                }
+                            }
+                        }
+
+                        //LINKS DE SUPORTE AO FORMULAŔIO
+                        .options{
+                            ul{
+                                display: table;
+                                float: left;
+                                margin-bottom: 5px;
+                                
+                                li{
+                                    display: table;
+                                    float: left;
+                                    margin: 0 5px;
+
+                                    &:first-child{
+                                        margin-left: 0;
+                                    }
+
+                                    &:last-child{
+                                        margin-right: 0;
+                                    }
+
+                                    a{
+                                        color: #0067b8;
+                                        font-size: .8125rem;
+                                        transition: all 0.5s;
+                                        &:hover{
+                                            color: #666;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        //MESSAGE
+                        .message{
+                            .txt{
+                                display: table;
+                                width: 100%;
+                                margin: 5px 0;
+                            }
+                        }
+
+                        //BOTÕES DE AÇÃO   
+                        .action-buttons{
+                            &>div{
+                                display:table;
+                                float: right;
+                                .divisory{
+                                    display: table;
+                                    float: left;
+                                    padding: 10px 5px;
+                                    &:first-child{
+                                        padding-left: 0;
+                                    }
+    
+                                    &:last-child{
+                                        padding-right: 0;
+                                    }
+    
+                                    input{
+                                        color: #fff;
+                                        letter-spacing: 0px;
+                                        font-weight: 400;
+                                        transition: none 0s ease 0s;
+                                        line-height: 19px;
+                                        transition: all 0.3s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* FOOTER */
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    overflow: visible;
+    z-index: 99;
+    clear: both;
+    background-color: rgba(0,0,0,0.6);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#99000000', endColorstr='#99000000');
+
+    .footer-links{
+        margin: 0;
+        float: right;
+        color: rgba(0,0,0,0.7);
+        font-size: 13px;
+
+        li{
+            color: #fff;
+            font-size: 12px;
+            line-height: 28px;
+            white-space: nowrap;
+            display: inline-block;
+            margin: 0 8px;
+            padding:0 5px;
+            &:first-child{
+                margin-left: 0;
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+/* CSS DO CUSTOM LABEL */
+.customHolder{
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    .customLabel{
+        color: #9e9e9e;
+        position: absolute;
+        display:table;
+        top: -2px;
+        left: 0;
+        font-size: 1rem;
+        cursor: text;
+        -webkit-transition: all .2s,color .2s ease-out, -webkit-transform .2s ease-out;
+        transition: all .2s,color .2s ease-out, -webkit-transform .2s ease-out;
+        transition: transform .2s ease-out, color .2s ease-out;
+        transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        text-align: initial;
+        -webkit-transform: translateY(12px);
+        transform: translateY(12px);
+    }
+
+    &.active{
+        .customLabel{
+            transform:translate(-14px) scale(0.8);
+            transform-origin:0 0;
+            -webkit-transform:translate(-14px) scale(0.8);
+            -webkit-transform-origin:0 0;
+            margin-left:13px;
+            top: -15px;
+        }
+    }
+}
+
+@media screen and (max-width:500px){
+    .btn{
+        width: 100%;
+        height: 38px;
+    }
+    .form-content{
+        form{
+            .middle{
+                .box{
+                    padding: 30px 15px;
+                    min-width: auto;
+                    .content{
+                        .form{
+                            &>div{
+                                margin: 10px 0;
+
+                                &:first-child{
+                                    margin-top: 0;
+                                }
+
+                                &:last-child{
+                                    margin-bottom: 0;
+                                }
+
+                            }
+                            .title{
+                                font-size: 1.2rem;
+                            }
+
+                            .alert{
+                                ul{
+                                    li{
+                                        font-size: 14px;
+                                        text-align: justify;
+                                    }
+                                }
+                            }
+
+                            .options{
+                                margin-top: 0;
+                            }
+                            
+                            .action-buttons{
+                                &>div{
+                                    width: 100%;
+                                    .divisory{
+                                        width:100%;
+                                        float: none;
+                                        padding: 0;
+                                        margin: 15px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer{
+        position: absolute;
+        left: 0;
+
+        .footer-links{
+            li{
+                margin: 0 5px;
+                font-size: 11px;
+                padding: 0 3px;
+            }
+        }
+    }
+}
